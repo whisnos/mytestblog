@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from apps.user.views import index
+from apps.user.views import index, test_json
 
 urlpatterns = [
     url(r'^index/', index),
+    url(r'^test_json/', test_json),
 ]
