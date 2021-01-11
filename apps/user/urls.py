@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from apps.user.views import index, test_json
+from user.views import index, test_json
 
+from django.conf.urls import url
+from .views import user_register,user_login,user_logout,user_center
 urlpatterns = [
-    url(r'^index/', index),
-    url(r'^test_json/', test_json),
+	url(r'^user_register/$',user_register,name='user_register'),
+	url(r'^user_login/$',user_login,name='user_login'),
+	url(r'^user_logout/$',user_logout,name='user_logout'),
+	url('^user_center/$',user_center,name='user_center')
 ]
